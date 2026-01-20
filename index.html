@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The blue Whale | Official Store</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            background-color: #0a0e14; /* Dark sea theme */
+            color: #ffffff;
+        }
+
+        header {
+            padding: 40px 20px;
+            text-align: center;
+            background: linear-gradient(180deg, #162130 0%, #0a0e14 100%);
+        }
+
+        .logo-area {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav a {
+            color: #00a8ff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: url('https://images.unsplash.com/photo-1518467166778-b88f373ffec7?auto=format&fit=crop&w=1350&q=80'); /* Ocean background */
+            background-size: cover;
+            background-position: center;
+            box-shadow: inset 0 0 0 2000px rgba(10, 14, 20, 0.7);
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        .cta-button {
+            background-color: #00a8ff;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        .cta-button:hover {
+            background-color: #0077b3;
+            transform: scale(1.05);
+        }
+
+        .products {
+            padding: 50px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .product-card {
+            background: #162130;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #1f2d3d;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-area">🐋</div>
+    <h1>THE BLUE WHALE</h1>
+    <nav>
+        <a href="#">Shop</a>
+        <a href="#">Lookbook</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>NEVER GIVE UP.</h2>
+    <p>Premium Apparel for the Ambitious.</p>
+    <button class="cta-button">View Collection</button>
+</section>
+
+<section class="products">
+    <div class="product-card">
+        <div style="font-size: 50px;">👕</div>
+        <h3>Signature Tee</h3>
+        <p>Coming Soon</p>
+    </div>
+    <div class="product-card">
+        <div style="font-size: 50px;">🧢</div>
+        <h3>Whale Snapback</h3>
+        <p>Coming Soon</p>
+    </div>
+    <div class="product-card">
+        <div style="font-size: 50px;">🧥</div>
+        <h3>Ocean Hoodie</h3>
+        <p>Coming Soon</p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 The blue Whale. Created by Asik.</p>
+</footer>
+
+</body>
+</html>
