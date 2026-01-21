@@ -5,9 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The blue Whale | Official Store</title>
     <style>
-        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; background-color: #0a0e14; color: #ffffff; text-align: center; }
-        
-        /* Top Banner */
+        body { 
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+            margin: 0; 
+            background: linear-gradient(180deg, #0a192f 0%, #020c1b 100%);
+            color: #ffffff; 
+            text-align: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png'), 
+                        linear-gradient(rgba(0, 168, 255, 0.1), rgba(0, 0, 0, 0.5));
+            z-index: -1;
+            opacity: 0.3;
+        }
+
         .promo-banner {
             background-color: #00a8ff;
             color: #fff;
@@ -17,7 +34,7 @@
             text-transform: uppercase;
         }
 
-        header { padding: 40px 20px; background: linear-gradient(180deg, #162130 0%, #0a0e14 100%); }
+        header { padding: 60px 20px; }
         
         .slideshow-container {
             max-width: 450px;
@@ -25,8 +42,9 @@
             margin: 20px auto;
             border-radius: 15px;
             overflow: hidden;
-            border: 2px solid #1f2d3d;
-            background: #000;
+            border: 2px solid rgba(0, 168, 255, 0.3);
+            background: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .mySlides1, .mySlides2 { display: none; }
@@ -44,13 +62,20 @@
             font-size: 20px;
             transition: 0.3s;
             border-radius: 50%;
-            user-select: none;
             background-color: rgba(0, 168, 255, 0.4);
         }
         .prev { left: 10px; }
         .next { right: 10px; }
 
-        .product-info { padding: 30px 20px; max-width: 600px; margin: auto; border-bottom: 1px solid #1f2d3d; }
+        .product-info { 
+            padding: 30px 20px; 
+            max-width: 600px; 
+            margin: auto; 
+            background: rgba(16, 33, 54, 0.8);
+            border-radius: 20px;
+            margin-bottom: 40px;
+        }
+        
         .price { color: #00a8ff; font-size: 1.8rem; font-weight: bold; margin: 10px 0; }
         
         .cta-button {
@@ -62,34 +87,62 @@
             display: inline-block;
             font-weight: bold;
             font-size: 1.1rem;
-            margin-top: 20px;
             box-shadow: 0 4px 15px rgba(0, 168, 255, 0.4);
         }
 
-        /* Share Section */
-        .share-section { margin-top: 20px; }
+        .share-section { margin-top: 25px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .share-grid { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+        
         .share-btn {
-            display: inline-block;
-            margin: 5px;
-            padding: 8px 12px;
+            padding: 10px 15px;
             border-radius: 5px;
             text-decoration: none;
             color: white;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: bold;
+            transition: 0.3s;
         }
+        .bg-instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
         .bg-whatsapp { background-color: #25D366; }
         .bg-facebook { background-color: #1877F2; }
-        .bg-telegram { background-color: #0088cc; }
-        .bg-twitter { background-color: #1DA1F2; }
 
-        .return-policy {
-            background-color: #162130;
-            padding: 15px;
-            margin-top: 30px;
-            font-size: 0.9rem;
+        .order-guide {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px 20px;
+            background: rgba(0, 168, 255, 0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(0, 168, 255, 0.2);
+        }
+        .step { margin-bottom: 20px; text-align: left; display: flex; align-items: flex-start; }
+        .step-num { 
+            background: #00a8ff; 
+            color: white; 
+            width: 30px; 
+            height: 30px; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            margin-right: 15px;
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+
+        /* Delivery and Return Policy Section */
+        .trust-badges {
+            background-color: rgba(0, 168, 255, 0.1);
+            padding: 20px;
+            margin: 40px auto;
+            max-width: 600px;
+            border-radius: 15px;
+            border: 1px dashed #00a8ff;
+        }
+        .trust-item {
+            font-size: 1rem;
             color: #00a8ff;
             font-weight: bold;
+            margin: 10px 0;
         }
 
         footer { padding: 40px; color: #666; font-size: 0.8rem; }
@@ -98,13 +151,13 @@
 <body>
 
 <div class="promo-banner">
-    🎉 Free Shipping on all orders over ₹999! 🎉
+    🌊 Winter Drop: Free Shipping on all orders! 🌊
 </div>
 
 <header>
-    <div style="font-size: 3rem;">🐋</div>
-    <h1>THE BLUE WHALE</h1>
-    <p style="letter-spacing: 2px; color: #00a8ff;">NEVER GIVE UP.</p>
+    <div style="font-size: 4rem; filter: drop-shadow(0 0 10px #00a8ff);">🐋</div>
+    <h1 style="letter-spacing: 5px;">THE BLUE WHALE</h1>
+    <p style="letter-spacing: 3px; color: #00a8ff; font-weight: bold;">NEVER GIVE UP.</p>
 </header>
 
 <div class="slideshow-container">
@@ -119,17 +172,19 @@
 <div class="product-info">
     <h2>Lurexon Eagle Graphic Tee</h2>
     <p class="price">₹499</p>
-    <a href="https://wa.me/917896327671?text=Hi%20Asik,%20I%20want%20to%20order%20the%20Lurexon%20Eagle%20Tee" class="cta-button">ORDER ON WHATSAPP</a>
+    <a href="https://wa.me/917002920294?text=Hi%20Asik,%20I%20want%20to%20order%20the%20Lurexon%20Eagle%20Tee" class="cta-button">ORDER ON WHATSAPP</a>
     
     <div class="share-section">
-        <p style="font-size: 0.8rem; color: #aaa;">Share this product:</p>
-        <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20Eagle%20Tee%20at%20The%20blue%20Whale!%20https://asikahmed8763-cmyk.github.io/The-Blue-Whale/" class="share-btn bg-whatsapp">WhatsApp</a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://asikahmed8763-cmyk.github.io/The-Blue-Whale/" class="share-btn bg-facebook">Facebook</a>
-        <a href="https://t.me/share/url?url=https://asikahmed8763-cmyk.github.io/The-Blue-Whale/&text=Check%20out%20this%20Eagle%20Tee!" class="share-btn bg-telegram">Telegram</a>
+        <p style="font-size: 0.8rem; color: #aaa;">Share this drop:</p>
+        <div class="share-grid">
+            <a href="https://www.instagram.com/reels/create/" class="share-btn bg-instagram">Instagram</a>
+            <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20Eagle%20Tee!%20https://asikahmed8763-cmyk.github.io/The-Blue-Whale/" class="share-btn bg-whatsapp">WhatsApp</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://asikahmed8763-cmyk.github.io/The-Blue-Whale/" class="share-btn bg-facebook">Facebook</a>
+        </div>
     </div>
 </div>
 
-<div class="slideshow-container" style="margin-top: 50px;">
+<div class="slideshow-container">
     <div class="mySlides2"><img src="IMG_2601.jpeg"></div>
     <div class="mySlides2"><img src="IMG_2605.jpeg"></div>
     <div class="mySlides2"><img src="IMG_2606.jpeg"></div>
@@ -141,17 +196,41 @@
 <div class="product-info">
     <h2>Premium Half Zip Snow Sweatshirt</h2>
     <p class="price">₹999</p>
-    <a href="https://wa.me/917896327671?text=Hi%20Asik,%20I%20want%20to%20order%20the%20Premium%20Half%20Zip%20Snow%20Sweatshirt" class="cta-button">ORDER ON WHATSAPP</a>
+    <a href="https://wa.me/917002920294?text=Hi%20Asik,%20I%20want%20to%20order%20the%20Premium%20Half%20Zip%20Snow%20Sweatshirt" class="cta-button">ORDER ON WHATSAPP</a>
     
     <div class="share-section">
-        <p style="font-size: 0.8rem; color: #aaa;">Share this product:</p>
-        <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20Winter%20Sweatshirt%20at%20The%20blue%20Whale!%20https://asikahmed8763-cmyk.github.io/The-Blue-Whale/" class="share-btn bg-whatsapp">WhatsApp</a>
-        <a href="https://twitter.com/intent/tweet?url=https://asikahmed8763-cmyk.github.io/The-Blue-Whale/&text=Check%20out%20this%20Winter%20Sweatshirt!" class="share-btn bg-twitter">Twitter</a>
+        <p style="font-size: 0.8rem; color: #aaa;">Share this drop:</p>
+        <div class="share-grid">
+            <a href="https://www.instagram.com/reels/create/" class="share-btn bg-instagram">Instagram</a>
+            <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20Winter%20Sweatshirt!%20https://asikahmed8763-cmyk.github.io/The-Blue-Whale/" class="share-btn bg-whatsapp">WhatsApp</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://asikahmed8763-cmyk.github.io/The-Blue-Whale/" class="share-btn bg-facebook">Facebook</a>
+        </div>
     </div>
 </div>
 
-<div class="return-policy">
-    🛡️ 7-Day Easy Return & Exchange Available
+<section class="order-guide">
+    <h2 style="margin-bottom: 30px; color: #00a8ff;">How To Order</h2>
+    <div class="step">
+        <div class="step-num">1</div>
+        <p>Click the <b>"Order on WhatsApp"</b> button to chat with Asik.</p>
+    </div>
+    <div class="step">
+        <div class="step-num">2</div>
+        <p>Send your <b>Size</b> and complete <b>Delivery Address</b>.</p>
+    </div>
+    <div class="step">
+        <div class="step-num">3</div>
+        <p>Pay securely via <b>Google Pay</b> or <b>PhonePe</b>.</p>
+    </div>
+    <div class="step">
+        <div class="step-num">4</div>
+        <p>Get your <b>Tracking ID</b> within 24 hours!</p>
+    </div>
+</section>
+
+<div class="trust-badges">
+    <div class="trust-item">🚚 FREE DELIVERY ALL OVER INDIA</div>
+    <div class="trust-item">🛡️ 7-DAY EASY RETURN & EXCHANGE</div>
 </div>
 
 <footer>
