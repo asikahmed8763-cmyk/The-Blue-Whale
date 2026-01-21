@@ -8,7 +8,6 @@
         body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; background-color: #0a0e14; color: #ffffff; text-align: center; }
         header { padding: 40px 20px; background: linear-gradient(180deg, #162130 0%, #0a0e14 100%); }
         
-        /* Slideshow Container */
         .slideshow-container {
             max-width: 450px;
             position: relative;
@@ -19,10 +18,9 @@
             background: #000;
         }
 
-        .mySlides { display: none; }
-        .mySlides img { width: 100%; vertical-align: middle; }
+        .mySlides1, .mySlides2 { display: none; }
+        .mySlides1 img, .mySlides2 img { width: 100%; vertical-align: middle; }
 
-        /* Navigation Buttons */
         .prev, .next {
             cursor: pointer;
             position: absolute;
@@ -41,7 +39,7 @@
         .prev { left: 10px; }
         .next { right: 10px; }
 
-        .product-info { padding: 30px 20px; max-width: 600px; margin: auto; }
+        .product-info { padding: 30px 20px; max-width: 600px; margin: auto; border-bottom: 1px solid #1f2d3d; }
         .price { color: #00a8ff; font-size: 1.8rem; font-weight: bold; margin: 10px 0; }
         
         .cta-button {
@@ -69,20 +67,35 @@
 </header>
 
 <div class="slideshow-container">
-    <div class="mySlides"><img src="IMG_2560.jpeg"></div>
-    <div class="mySlides"><img src="IMG_2562.jpeg"></div>
-    <div class="mySlides"><img src="IMG_2563.jpeg"></div>
-    <div class="mySlides"><img src="IMG_2564.jpeg"></div>
-
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div class="mySlides1"><img src="IMG_2560.jpeg"></div>
+    <div class="mySlides1"><img src="IMG_2562.jpeg"></div>
+    <div class="mySlides1"><img src="IMG_2563.jpeg"></div>
+    <div class="mySlides1"><img src="IMG_2564.jpeg"></div>
+    <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
 </div>
 
 <div class="product-info">
     <h2>Lurexon Eagle Graphic Tee</h2>
-    <p>Premium quality streetwear featuring a custom eagle design. Built for those who never give up.</p>
-    <p class="price">₹499</p>
-    <a href="https://wa.me/917002920294?text=Hi%20Asik,%20I%20want%20to%20order%20the%20Lurexon%20Eagle%20Tee" class="cta-button">ORDER ON WHATSAPP</a>
+    <p>Premium quality streetwear featuring a custom eagle design.</p>
+    <p class="price">₹699</p>
+    <a href="https://wa.me/917896327671?text=Hi%20Asik,%20I%20want%20to%20order%20the%20Lurexon%20Eagle%20Tee" class="cta-button">ORDER ON WHATSAPP</a>
+</div>
+
+<div class="slideshow-container" style="margin-top: 50px;">
+    <div class="mySlides2"><img src="IMG_2601.JPG"></div>
+    <div class="mySlides2"><img src="IMG_2606.JPG"></div>
+    <div class="mySlides2"><img src="IMG_2607.JPG"></div>
+    <div class="mySlides2"><img src="IMG_2605.JPG"></div>
+    <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+</div>
+
+<div class="product-info">
+    <h2>Premium Half Zip Snow Sweatshirt</h2>
+    <p>New Winter Collection. High-insulation half-zip for extreme comfort and style.</p>
+    <p class="price">₹1,299</p>
+    <a href="https://wa.me/917896327671?text=Hi%20Asik,%20I%20want%20to%20order%20the%20Premium%20Half%20Zip%20Snow%20Sweatshirt" class="cta-button">ORDER ON WHATSAPP</a>
 </div>
 
 <footer>
@@ -91,22 +104,24 @@
 </footer>
 
 <script>
-let slideIndex = 1;
-showSlides(slideIndex);
+let slideIndex = [1,1];
+let slideId = ["mySlides1", "mySlides2"]
+showSlides(1, 0);
+showSlides(1, 1);
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+function plusSlides(n, no) {
+  showSlides(slideIndex[no] += n, no);
 }
 
-function showSlides(n) {
+function showSlides(n, no) {
   let i;
-  let slides = document.getElementsByClassName("mySlides");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
+  let x = document.getElementsByClassName(slideId[no]);
+  if (n > x.length) {slideIndex[no] = 1}    
+  if (n < 1) {slideIndex[no] = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
   }
-  slides[slideIndex-1].style.display = "block";  
+  x[slideIndex[no]-1].style.display = "block";  
 }
 </script>
 
