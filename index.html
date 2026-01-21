@@ -5,154 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The blue Whale | Official Store</title>
     <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            margin: 0;
-            background-color: #0a0e14;
-            color: #ffffff;
-        }
-
-        header {
-            padding: 40px 20px;
-            text-align: center;
-            background: linear-gradient(180deg, #162130 0%, #0a0e14 100%);
-        }
-
-        .logo-area {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-
-        nav {
-            margin-top: 20px;
-        }
-
-        nav a {
-            color: #00a8ff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .hero {
-            height: 40vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: #162130;
-            border-bottom: 2px solid #1f2d3d;
-        }
-
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .products {
-            padding: 50px 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .product-card {
-            background: #162130;
-            padding: 15px;
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; background-color: #0a0e14; color: #ffffff; text-align: center; }
+        header { padding: 40px 20px; background: linear-gradient(180deg, #162130 0%, #0a0e14 100%); }
+        
+        /* Slideshow Container */
+        .slideshow-container {
+            max-width: 450px;
+            position: relative;
+            margin: 20px auto;
             border-radius: 15px;
-            text-align: center;
-            border: 1px solid #1f2d3d;
-            transition: transform 0.3s;
+            overflow: hidden;
+            border: 2px solid #1f2d3d;
+            background: #000;
         }
 
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
+        .mySlides { display: none; }
+        .mySlides img { width: 100%; vertical-align: middle; }
 
-        .product-card img {
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 15px;
+        /* Navigation Buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.3s;
+            border-radius: 50%;
+            user-select: none;
+            background-color: rgba(0, 168, 255, 0.4);
         }
+        .prev { left: 10px; }
+        .next { right: 10px; }
 
+        .product-info { padding: 30px 20px; max-width: 600px; margin: auto; }
+        .price { color: #00a8ff; font-size: 1.8rem; font-weight: bold; margin: 10px 0; }
+        
         .cta-button {
             background-color: #00a8ff;
             color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
+            padding: 18px 40px;
             text-decoration: none;
+            border-radius: 8px;
             display: inline-block;
-            margin-top: 10px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(0, 168, 255, 0.4);
         }
 
-        footer {
-            text-align: center;
-            padding: 40px;
-            font-size: 0.9rem;
-            color: #666;
-            background: #0d141d;
-        }
+        footer { padding: 40px; color: #666; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo-area">🐋</div>
+    <div style="font-size: 3rem;">🐋</div>
     <h1>THE BLUE WHALE</h1>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Shop</a>
-        <a href="#">About</a>
-    </nav>
+    <p style="letter-spacing: 2px; color: #00a8ff;">NEVER GIVE UP.</p>
 </header>
 
-<section class="hero">
-    <h2>NEVER GIVE UP.</h2>
-    <p>Premium Streetwear by Asik</p>
-</section>
+<div class="slideshow-container">
+    <div class="mySlides"><img src="IMG_2560.jpeg"></div>
+    <div class="mySlides"><img src="IMG_2562.jpeg"></div>
+    <div class="mySlides"><img src="IMG_2563.jpeg"></div>
+    <div class="mySlides"><img src="IMG_2564.jpeg"></div>
 
-<section class="products">
-    <div class="product-card">
-        <img src="IMG_2560.jpeg" alt="Premium Tee">
-        <h3>Midnight Essential Tee</h3>
-        <p style="color: #00a8ff; font-weight: bold;">₹599</p>
-        <a href="https://wa.me/917896327671?text=Hi%20Asik,%20I%20want%20to%20order%20the%20Midnight%20Essential%20Tee%20(2560)" class="cta-button">Order on WhatsApp</a>
-    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
 
-    <div class="product-card">
-        <img src="IMG_2562.jpeg" alt="Ocean Tee">
-        <h3>Ocean Deep Collection</h3>
-        <p style="color: #00a8ff; font-weight: bold;">₹599</p>
-        <a href="https://wa.me/917896327671?text=Hi%20Asik,%20I%20want%20to%20order%20the%20Ocean%20Deep%20Tee%20(2562)" class="cta-button">Order on WhatsApp</a>
-    </div>
-
-    <div class="product-card">
-        <img src="IMG_2563.jpeg" alt="Eagle Tee">
-        <h3>Lurexon Eagle Graphic</h3>
-        <p style="color: #00a8ff; font-weight: bold;">₹699</p>
-        <a href="https://wa.me/917896327671?text=Hi%20Asik,%20I%20want%20to%20order%20the%20Eagle%20Graphic%20Tee%20(2563)" class="cta-button">Order on WhatsApp</a>
-    </div>
-
-    <div class="product-card">
-        <img src="IMG_2564.jpeg" alt="Ambition Tee">
-        <h3>Ambition Street Tee</h3>
-        <p style="color: #00a8ff; font-weight: bold;">₹599</p>
-        <a href="https://wa.me/917896327671?text=Hi%20Asik,%20I%20want%20to%20order%20the%20Ambition%20Street%20Tee%20(2564)" class="cta-button">Order on WhatsApp</a>
-    </div>
-</section>
+<div class="product-info">
+    <h2>Lurexon Eagle Graphic Tee</h2>
+    <p>Premium quality streetwear featuring a custom eagle design. Built for those who never give up.</p>
+    <p class="price">₹699</p>
+    <a href="https://wa.me/917896327671?text=Hi%20Asik,%20I%20want%20to%20order%20the%20Lurexon%20Eagle%20Tee" class="cta-button">ORDER ON WHATSAPP</a>
+</div>
 
 <footer>
     <p>&copy; 2026 The blue Whale. Created by Asik.</p>
-    <p>✅ High Quality | 🚛 Pan India Delivery</p>
+    <p>Based in Barpeta Road, Assam.</p>
 </footer>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slides[slideIndex-1].style.display = "block";  
+}
+</script>
 
 </body>
 </html>
