@@ -88,48 +88,72 @@
             font-weight: bold;
             font-size: 1.1rem;
             box-shadow: 0 4px 15px rgba(0, 168, 255, 0.4);
+            border: none;
+            cursor: pointer;
         }
 
-        .share-section { margin-top: 25px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); }
-        .share-grid { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-        
-        .share-btn {
-            padding: 10px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            color: white;
-            font-size: 0.85rem;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .bg-instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-        .bg-whatsapp { background-color: #25D366; }
-        .bg-facebook { background-color: #1877F2; }
-
-        .order-guide {
+        /* Review Section Styles */
+        .review-container {
             max-width: 600px;
             margin: 50px auto;
             padding: 30px 20px;
-            background: rgba(0, 168, 255, 0.05);
+            background: rgba(16, 33, 54, 0.9);
             border-radius: 20px;
-            border: 1px solid rgba(0, 168, 255, 0.2);
-        }
-        .step { margin-bottom: 20px; text-align: left; display: flex; align-items: flex-start; }
-        .step-num { 
-            background: #00a8ff; 
-            color: white; 
-            width: 30px; 
-            height: 30px; 
-            border-radius: 50%; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            margin-right: 15px;
-            flex-shrink: 0;
-            font-weight: bold;
+            border: 1px solid rgba(0, 168, 255, 0.3);
         }
 
-        /* Delivery and Return Policy Section */
+        .star-rating {
+            display: flex;
+            justify-content: center;
+            flex-direction: row-reverse;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .star-rating input { display: none; }
+        .star-rating label {
+            font-size: 35px;
+            color: #444;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .star-rating input:checked ~ label,
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: #00a8ff;
+        }
+
+        .review-input {
+            width: 90%;
+            background: #0a192f;
+            border: 1px solid #1f2d3d;
+            padding: 12px;
+            border-radius: 10px;
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .upload-box {
+            margin-bottom: 20px;
+        }
+
+        .upload-label {
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px dashed #00a8ff;
+            cursor: pointer;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            font-size: 30px;
+        }
+
+        .upload-box input { display: none; }
+
         .trust-badges {
             background-color: rgba(0, 168, 255, 0.1);
             padding: 20px;
@@ -138,12 +162,7 @@
             border-radius: 15px;
             border: 1px dashed #00a8ff;
         }
-        .trust-item {
-            font-size: 1rem;
-            color: #00a8ff;
-            font-weight: bold;
-            margin: 10px 0;
-        }
+        .trust-item { font-size: 1rem; color: #00a8ff; font-weight: bold; margin: 10px 0; }
 
         footer { padding: 40px; color: #666; font-size: 0.8rem; }
     </style>
@@ -173,15 +192,6 @@
     <h2>Lurexon Eagle Graphic Tee</h2>
     <p class="price">₹499</p>
     <a href="https://wa.me/917002920294?text=Hi%20Asik,%20I%20want%20to%20order%20the%20Lurexon%20Eagle%20Tee" class="cta-button">ORDER ON WHATSAPP</a>
-    
-    <div class="share-section">
-        <p style="font-size: 0.8rem; color: #aaa;">Share this drop:</p>
-        <div class="share-grid">
-            <a href="https://www.instagram.com/reels/create/" class="share-btn bg-instagram">Instagram</a>
-            <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20Eagle%20Tee!%20https://asikahmed8763-cmyk.github.io/The-Blue-Whale/" class="share-btn bg-whatsapp">WhatsApp</a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://asikahmed8763-cmyk.github.io/The-Blue-Whale/" class="share-btn bg-facebook">Facebook</a>
-        </div>
-    </div>
 </div>
 
 <div class="slideshow-container">
@@ -197,35 +207,29 @@
     <h2>Premium Half Zip Snow Sweatshirt</h2>
     <p class="price">₹999</p>
     <a href="https://wa.me/917002920294?text=Hi%20Asik,%20I%20want%20to%20order%20the%20Premium%20Half%20Zip%20Snow%20Sweatshirt" class="cta-button">ORDER ON WHATSAPP</a>
-    
-    <div class="share-section">
-        <p style="font-size: 0.8rem; color: #aaa;">Share this drop:</p>
-        <div class="share-grid">
-            <a href="https://www.instagram.com/reels/create/" class="share-btn bg-instagram">Instagram</a>
-            <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20Winter%20Sweatshirt!%20https://asikahmed8763-cmyk.github.io/The-Blue-Whale/" class="share-btn bg-whatsapp">WhatsApp</a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://asikahmed8763-cmyk.github.io/The-Blue-Whale/" class="share-btn bg-facebook">Facebook</a>
-        </div>
-    </div>
 </div>
 
-<section class="order-guide">
-    <h2 style="margin-bottom: 30px; color: #00a8ff;">How To Order</h2>
-    <div class="step">
-        <div class="step-num">1</div>
-        <p>Click the <b>"Order on WhatsApp"</b> button to chat with Asik.</p>
+<section class="review-container">
+    <h2 style="color: #00a8ff; margin-bottom: 20px;">Customer Reviews</h2>
+    <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 20px;">Submit your review below:</p>
+
+    <div class="star-rating">
+        <input type="radio" name="stars" id="star5" value="5"><label for="star5">★</label>
+        <input type="radio" name="stars" id="star4" value="4"><label for="star4">★</label>
+        <input type="radio" name="stars" id="star3" value="3"><label for="star3">★</label>
+        <input type="radio" name="stars" id="star2" value="2"><label for="star2">★</label>
+        <input type="radio" name="stars" id="star1" value="1"><label for="star1">★</label>
     </div>
-    <div class="step">
-        <div class="step-num">2</div>
-        <p>Send your <b>Size</b> and complete <b>Delivery Address</b>.</p>
+
+    <textarea id="reviewText" class="review-input" placeholder="Tell us what you think about our product..." rows="4"></textarea>
+
+    <div class="upload-box">
+        <p style="font-size: 0.8rem; margin-bottom: 10px;">Upload product photo:</p>
+        <label for="fileUpload" class="upload-label">+</label>
+        <input type="file" id="fileUpload" accept="image/*">
     </div>
-    <div class="step">
-        <div class="step-num">3</div>
-        <p>Pay securely via <b>Google Pay</b> or <b>PhonePe</b>.</p>
-    </div>
-    <div class="step">
-        <div class="step-num">4</div>
-        <p>Get your <b>Tracking ID</b> within 24 hours!</p>
-    </div>
+
+    <button onclick="sendReview()" class="cta-button">SUBMIT REVIEW</button>
 </section>
 
 <div class="trust-badges">
@@ -257,6 +261,23 @@ function showSlides(n, no) {
      x[i].style.display = "none";  
   }
   x[slideIndex[no]-1].style.display = "block";  
+}
+
+// Review Submission Function
+function sendReview() {
+    let stars = document.querySelector('input[name="stars"]:checked');
+    let text = document.getElementById('reviewText').value;
+    
+    if(!stars) {
+        alert("Please select a star rating!");
+        return;
+    }
+    
+    let starCount = stars.value;
+    let message = `Hi Asik! I want to leave a review for The blue Whale.%0A%0AStar Rating: ${starCount}/5 ⭐️%0AComment: ${text}`;
+    
+    // Redirect to WhatsApp with the review data
+    window.open(`https://wa.me/917002920294?text=${message}`, '_blank');
 }
 </script>
 
